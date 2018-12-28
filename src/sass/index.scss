@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%
+}
+
+.wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: red;
+
+    .header{
+        width: 100%;
+        height: .45rem;
+    }
+
+    .main{
+        width: 100%;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .footer{
+        width: 100%;
+        height: .45rem;
+    }
+}
