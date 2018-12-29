@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: .14rem;
 }
 
 html,body{
@@ -14,21 +15,59 @@ html,body{
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: red;
 
     .header{
         width: 100%;
         height: .45rem;
+        border: 1px solid #ccc;
+
+        .inp{
+            width: 100%;
+            height: .45rem;
+            outline: none;
+            border: 0;
+            text-indent: .5rem;
+        }
     }
 
     .main{
         width: 100%;
         flex: 1;
-        overflow: hidden;
+        overflow: auto;
+
+        .content{
+            width: 100%;
+
+            .branch{ 
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .shops{
+                width: 100%;
+                padding: 5%;
+
+                dl{
+                    width: 30%;
+                    text-align: center;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 10px;
+                    padding: 5%;
+                    margin-left: 2.5%;
+                    margin-top: 3%;
+
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 
     .footer{
         width: 100%;
         height: .45rem;
+        border: 1px solid #ccc;
     }
 }

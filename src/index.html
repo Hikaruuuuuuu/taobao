@@ -11,11 +11,28 @@
 </head>
 <body>
     <div class="wrap">
-        <header class="header"></header>
+        <header class="header">
+            <input type="text" class="inp" placeholder="请输入">
+        </header>
         <main class="main">
-            <div class="content"></div>
+            <div class="content">
+                <div class="branch">
+                    <span class="auto">综合</span>
+                    <span class="priceUp">价格降序</span>
+                    <span class="priceDown">价格升序</span>
+                    <span class="sales">销量</span>
+                    <span class="cut">🌔</span>
+                </div>
+                <div class="shops"></div>
+            </div>
         </main>
         <footer class="footer"></footer>
     </div>
+
+    <script src="js/index.js"></script>
+
+    <script>
+        new Taobao()
+    </script>
 </body>
 </html>

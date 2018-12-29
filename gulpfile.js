@@ -5,7 +5,9 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     watch = require('gulp-watch'),
     fs = require('fs'),
+    path = require('path'),
     url = require('url'),
+    list = require('./src/data/data')
     server = require('gulp-webserver');
 
 gulp.task('sass', function(){
@@ -23,12 +25,20 @@ gulp.task('server', function(){
         .pipe(server({
             port: 8888,
             open: true,
+            livereload: true,
             middleware: function(req, res, next){
                 var pathname = url.parse(req.url).pathname;
                 if(pathname == '/favicon.ico'){
                     return res.end()
                 }
-                res.end(fs.readFileSync('./src/index.html'))
+
+                if(pathname == '/getData'){
+                    console.log( url.parse(req.url, true).query)
+                    res.end(JSON.stringify({"code": 1, "data": list}))
+                }
+
+                pathname = pathname == "/" ? "index.html" : pathname;
+                res.end(fs.readFileSync(path.join(__dirname, "src", pathname)))
             }
         }))
 })
